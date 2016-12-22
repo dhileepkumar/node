@@ -1,0 +1,17 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "This Project to write Rest API",
+  "main": "1",
+  "scripts": {
+    "test": "Testing Environment"
+  },
+  "keywords": [
+    "Node"
+  ],
+  "author": "Dhileep",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.7.2"
+  }
+}
