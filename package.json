@@ -4,7 +4,8 @@
   "description": "This Project to write Rest API",
   "main": "1",
   "scripts": {
-    "test": "Testing Environment"
+    "test": "Testing Environment",
+    "start": "node app/server/server.js"
   },
   "keywords": [
     "Node"
@@ -12,6 +13,7 @@
   "author": "Dhileep",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "mongoose": "^4.7.2"
   }
 }
