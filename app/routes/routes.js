@@ -9,8 +9,12 @@ router.get('/',RouteController.homedetails);
 router.post('/',RouteController.homedetails);
 /* home route ends for get and post */
 
-/*create user */
+/* user roots*/
+router.get('/userlist',UserController.userlist);
 router.post('/useradd',UserController.useradd);
+router.post('/userlistone',UserController.userlistone);
+router.post('/updateuser',UserController.updateuser);
+router.delete('/deleteuser',UserController.deleteuser);
 /*create user routes ends */
 
 module.exports = router;
