@@ -4,14 +4,14 @@ var mongoose= require('mongoose'),
 	
 	mongoose.connect(dbconfig.get('mongoose:uri')); // creating mongoose connection 
 	
-var _dbconnection = mongoose.connection; /* creating Db connection */
+	var _dbconnection = mongoose.connection; /* creating Db connection */
 
-_dbconnection.on('error',function(err){
-	console.log(err);
-})
+	_dbconnection.on('error',function(err){
+		console.log(err);
+	})
 
-_dbconnection.once('open', function dbcondetails(){
-	console.log('DB Connected successfully');
-});
+	_dbconnection.once('open', function dbcondetails(){
+		console.log('DB Connected successfully');
+	});
 	
-module.exports = _dbconnection;
+module.exports = mongoose;

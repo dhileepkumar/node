@@ -13,7 +13,9 @@
   "author": "Dhileep",
   "license": "ISC",
   "dependencies": {
+    "MD5": "^1.3.0",
     "body-parser": "^1.15.2",
+    "md5": "^2.2.1",
     "mongoose": "^4.7.2"
   }
 }
