@@ -135,25 +135,33 @@ exports.updateuser = function(req, res){
 		if(_id && _name && _email){
 			if(_password){
 				_userdetails = {
-					_id : _id,
 					name : _name,
 					email : _email,
-					password : _password
+					password : md5(_password)
 				}
 			}else{
 				_userdetails = {
-					_id : _id,
 					name : _name,
 					email : _email
 				}
 			}
 			
-			usermodel.find({ email: _email, _id:{$ne : _id},},function(err, data){
-				if(data){
-					
+			usermodel.find({ email: _email, _id:{$ne : _id}},function(err, data){
+				if(data.length>=1){
+					_senddata = {success:false, data:'', message:"Email ID Already Exists"};
+					res.send(_senddata);
 				}
 				else{
-					
+					usermodel.findOneAndUpdate({_id:_id},{$set:_userdetails},function(err, data){
+						if(err){
+							_senddata = {success:false, data:err, message:"User details cannot be updated now"};
+							res.send(_senddata);
+						}
+						else{
+							_senddata = {success:true, data:data, message:"User details Updated"};
+							res.send(_senddata);
+						}
+					});
 				}
 			});
 			
